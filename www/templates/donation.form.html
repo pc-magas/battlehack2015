@@ -1,0 +1,20 @@
+<!--
+  View: Donation.Form
+-->
+<ion-view cache-view="false" view-title="Donate" name="donation.form">
+  <ion-content class="padding">
+    <div ng-init="donate_init()">
+      <form id="checkout" method="post" action="http://battlehack2015-pcmagas.rhcloud.com/index.php/Donation/donate_to">
+        <!--<input type="text" name="oid" value="{{organization.id}}"/>
+        <input type="text" name="mid" value="{{monument.id}}"/>-->
+        <div id="payment-form"></div>
+        <input class="button button-icon icon ion-android-done" type="submit" value="Click to donate 1.00 Euro to {{organization.title}}">
+      </form>
+    </div>
+  </ion-content>
+  <div class="bar bar-footer bar-positive">
+    <div class="button-bar">
+      <a class="button button-icon icon ion-android-close" href="#/organization/list"></a>
+    </div>
+  </div>  
+</ion-view>

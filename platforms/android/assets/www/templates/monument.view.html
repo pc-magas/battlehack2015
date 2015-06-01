@@ -1,0 +1,21 @@
+<!--
+  View: Monument.View
+-->
+<ion-view cache-view="false" view-title="Info" name="monument.view">
+  <ion-content on-swipe-right="bring_next()" on-swipe-left="bring_prev()">
+    <div class="card item item-avatar item-body">
+      <center>
+        <h2>{{monument.title}}</h2>
+        <img src="{{monument.image}}">
+      </center>
+      <p>{{monument.description}}</p>
+    </div>
+    <p class="padding-bottom">&nbsp;</p>
+  </ion-content>
+  <div class="bar bar-footer bar-positive">
+    <div class="button-bar">
+      <a class="button button-icon icon ion-social-bitcoin" href="#/organization/list"></a> 
+      <a class="button button-icon icon ion-arrow-return-left" href="#/monument/list"></a>    
+    </div>
+  </div>
+</ion-view>

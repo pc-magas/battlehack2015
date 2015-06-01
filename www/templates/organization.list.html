@@ -1,0 +1,30 @@
+<!--
+  View: Organization.List
+-->
+<ion-view cache-view="false" view-title="NGOs" name="organization.list">
+  <ion-content>
+    <div class="list padding" ng-init="fetch_all()">
+      <p>
+        Select an organization you wish to donate money.
+      </p>
+      <div ng-if="organizations != null && organizations.length > 0">
+        <div class="item item-body card" id="{{'_organization' + org.id}}" ng-repeat="org in organizations track by $index">
+          <div class="item row">
+            <div class="item-avatar col col-90" ng-controller="Donation" ng-click="pop_up_donation_form(org)" on-swipe-right="pop_up_donation_form(org)" on-swipe-left="pop_up_donation_form(org)">
+              <img src="{{org.avatar}}">
+              <div style="padding-left:70px">
+                <h2>{{org.title}}</h2>
+                <h3>{{org.description}}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <div class="bar bar-footer bar-positive" hide-on="scroll-down" show-on="scroll-up">
+    <div class="button-bar">
+      <a class="button button-icon icon ion-arrow-return-left" href="#/monument/view"></a>
+    </div>
+  </div>
+</ion-view>

@@ -1,0 +1,37 @@
+<!--
+  View: Monument.List
+-->
+<ion-view cache-view="false" view-title="LiB" name="monument.list">
+  <ion-content>
+    <p class="padding-bottom">&nbsp;</p>
+    <div ng-init="fetch_by_location()">
+      <div ng-if="monuments == null || monuments.length == 0" class="card item item-body padding">
+        <center>
+          <img src='img/logo.png'/><br/><br/>
+          <ion-spinner></ion-spinner>
+          <p>Scanning for information...</p>
+        </center>
+      </div>
+      <div ng-if="monuments != null && monuments.length > 0">
+        <div class="card" id="{{'_monument' + m.id}}" ng-repeat="m in monuments track by $index">
+          <div class="item row">
+            <div class="item-avatar col col-90" ng-click="fetch_by_id(m,$index)" on-swipe-right="fetch_by_id(m,$index)" on-swipe-left="fetch_by_id(m,$index)">
+              <img src="{{m.avatar}}">
+              <div style="padding-left:70px">
+                <h2>{{m.title}}</h2>
+                <h3>{{m.short_description}}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="padding-bottom">&nbsp;</p>
+  </ion-content>
+  <div class="bar bar-footer bar-positive">
+    <div class="button-bar">
+      <button class="button button-icon icon ion-ios-refresh-empty" ng-click="reset_fetch_data()"></button>
+      <!--<button class="button button-icon icon ion-power" ng-controller="Common" ng-click="exit_app()"></button>-->
+    </div>
+  </div>
+</ion-view>
